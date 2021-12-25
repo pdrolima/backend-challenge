@@ -18,8 +18,7 @@ class Kernel extends ConsoleKernel
     protected function schedule(Schedule $schedule)
     {
         $schedule->command('space-flight-articles')
-                // ->dailyAt('9:00')
-                ->everyMinute()
+                ->dailyAt('9:00')
                 ->timezone('America/Sao_Paulo')
                 ->emailOutputOnFailure('infra@example.com');
     }
