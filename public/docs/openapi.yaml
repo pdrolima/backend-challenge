@@ -1,0 +1,454 @@
+openapi: 3.0.3
+info:
+  title: 'Space Flight News'
+  description: 'API utilizando dados do Space Flight News para obter artigos relacionados a voos espaciais.'
+  version: 1.0.0
+servers:
+  -
+    url: 'http://laravel-backend-challenge.test'
+paths:
+  /articles:
+    get:
+      summary: 'Lista todos os artigos'
+      description: ''
+      parameters:
+        -
+          in: header
+          name: Content-Type
+          description: ''
+          example: application/json
+          schema:
+            type: string
+        -
+          in: header
+          name: Accept
+          description: ''
+          example: application/json
+          schema:
+            type: string
+      responses:
+        200:
+          description: ''
+          content:
+            text/plain:
+              schema:
+                type: string
+                example: "{\n \"data\": [\n {\n   \"id\": 1,\n    \"title\": \"NASA Selects Four University Teams for Aviation Projects\",\n    \"url\": \"http://www.nasa.gov/press-release/nasa-selects-four-university-teams-for-aviation-projects\",\n    \"imageUrl\": \"https://www.nasa.gov/sites/default/files/thumbnails/image/university-concept.jpg?itok=HPhDA6V-\",\n    \"newsSite\": \"NASA\",\n\"     summary\": \"NASA’s research focus on sustainable aviation will get some big help from teams of university\nfaculty and students recently selected to participate in the agency’s University Leadership Initiative (ULI).\",\n     \"featured\": false,\n     \"launches\": [],\n     \"events\": [],\n     \"publishedAt\": \"2021-12-23T19:06:00.000000Z\",\n     \"updatedAt\": \"2021-12-23T19:06:55.000000Z\"\n  }\n],\n\"links\": {\n  \"first\": \"http://laravel-backend-challenge.test/articles?page=1\",\n  \"last\": \"http://laravel-backend-challenge.test/articles?page=1\",\n  \"prev\": null,\n  \"next\": null\n },\n \"meta\": {\n  \"current_page\": 1,\n  \"from\": 1,\n  \"last_page\": 1,\n  \"links\": [\n     {\n        \"url\": null,\n       \"label\": \"&laquo; Previous\",\n       \"active\": false\n     },\n     {\n     \"url\": \"http://laravel-backend-challenge.test/articles?page=1\",\n     \"label\": \"1\",\n     \"active\": true\n    },\n    {\n     \"url\": null,\n     \"label\": \"Next &raquo;\",\n     \"active\": false\n     }\n  ],\n    \"path\": \"http://laravel-backend-challenge.test/articles\",\n    \"per_page\": 15,\n    \"to\": 1,\n    \"total\": 1\n   }\n}"
+      tags:
+        - Artigos
+      security: []
+    post:
+      summary: 'Adiciona um novo artigo'
+      description: ''
+      parameters:
+        -
+          in: header
+          name: Content-Type
+          description: ''
+          example: application/json
+          schema:
+            type: string
+        -
+          in: header
+          name: Accept
+          description: ''
+          example: application/json
+          schema:
+            type: string
+      responses:
+        201:
+          description: ''
+          content:
+            text/plain:
+              schema:
+                type: string
+                example: "{\n{\n   \"data\": {\n       \"title\": \"omnis\",\n        \"url\": \"occaecati\",\n        \"imageUrl\": \"est\",\n       \"newsSite\": \"et\",\n        \"summary\": \"omnis\",\n        \"featured\": true,\n        \"publishedAt\": \"2021-12-25T13:16:00.000000Z\",\n       \"updatedAt\": \"2021-12-25T19:01:28.000000Z\",\n       \"id\": 17\n   }\n }"
+        422:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  message: 'The given data was invalid.'
+                  errors:
+                    title:
+                      - 'The title field is required.'
+                    url:
+                      - 'The url field is required.'
+                    imageUrl:
+                      - 'The image url field is required.'
+                    newsSite:
+                      - 'The news site field is required.'
+                    summary:
+                      - 'The summary field is required.'
+                    featured:
+                      - 'The featured field is required.'
+                properties:
+                  message:
+                    type: string
+                    example: 'The given data was invalid.'
+                  errors:
+                    type: object
+                    example:
+                      title:
+                        - 'The title field is required.'
+                      url:
+                        - 'The url field is required.'
+                      imageUrl:
+                        - 'The image url field is required.'
+                      newsSite:
+                        - 'The news site field is required.'
+                      summary:
+                        - 'The summary field is required.'
+                      featured:
+                        - 'The featured field is required.'
+      tags:
+        - Artigos
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                title:
+                  type: string
+                  description: 'The title of the article.'
+                  example: quo
+                url:
+                  type: string
+                  description: 'The url of the article.'
+                  example: consequatur
+                imageUrl:
+                  type: string
+                  description: 'The image url of the article.'
+                  example: voluptatem
+                newsSite:
+                  type: string
+                  description: 'The news site of the article.'
+                  example: unde
+                summary:
+                  type: string
+                  description: 'The summary of the article.'
+                  example: nisi
+                featured:
+                  type: boolean
+                  description: 'The featured of the article.'
+                  example: true
+                launches:
+                  type: array
+                  description: 'The launches of the article.'
+                  example:
+                    - deleniti
+                  items:
+                    type: string
+                events:
+                  type: array
+                  description: 'The events of the article.'
+                  example:
+                    - officiis
+                  items:
+                    type: string
+              required:
+                - title
+                - url
+                - imageUrl
+                - newsSite
+                - summary
+                - featured
+                - launches
+                - events
+      security: []
+  '/articles/{id}':
+    delete:
+      summary: 'Deleta um artigo'
+      description: ''
+      parameters:
+        -
+          in: header
+          name: Content-Type
+          description: ''
+          example: application/json
+          schema:
+            type: string
+        -
+          in: header
+          name: Accept
+          description: ''
+          example: application/json
+          schema:
+            type: string
+      responses:
+        200:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  message: 'Artigo deletado!'
+                properties:
+                  message:
+                    type: string
+                    example: 'Artigo deletado!'
+        404:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  message: 'Resource not found!'
+                properties:
+                  message:
+                    type: string
+                    example: 'Resource not found!'
+      tags:
+        - Artigos
+      security: []
+    put:
+      summary: 'Atualiza um único artigo'
+      description: ''
+      parameters:
+        -
+          in: header
+          name: Content-Type
+          description: ''
+          example: application/json
+          schema:
+            type: string
+        -
+          in: header
+          name: Accept
+          description: ''
+          example: application/json
+          schema:
+            type: string
+      responses:
+        200:
+          description: ''
+          content:
+            text/plain:
+              schema:
+                type: string
+                example: "{\n   \"data\": {\n      \"id\": 10\n       \"title\": \"omnis\",\n        \"url\": \"occaecati\",\n        \"imageUrl\": \"est\",\n        \"newsSite\": \"et\",\n        \"summary\": \"omnis\",\n        \"featured\": true,\n        \"publishedAt\": \"2021-12-25T13:16:00.000000Z\",\n        \"updatedAt\": \"2021-12-25T19:01:28.000000Z\",\n   }\n }"
+        404:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  message: 'Resource not found!'
+                properties:
+                  message:
+                    type: string
+                    example: 'Resource not found!'
+        422:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  message: 'The given data was invalid.'
+                  errors:
+                    title:
+                      - 'The title field is required.'
+                    url:
+                      - 'The url field is required.'
+                    imageUrl:
+                      - 'The image url field is required.'
+                    newsSite:
+                      - 'The news site field is required.'
+                    summary:
+                      - 'The summary field is required.'
+                    featured:
+                      - 'The featured field is required.'
+                properties:
+                  message:
+                    type: string
+                    example: 'The given data was invalid.'
+                  errors:
+                    type: object
+                    example:
+                      title:
+                        - 'The title field is required.'
+                      url:
+                        - 'The url field is required.'
+                      imageUrl:
+                        - 'The image url field is required.'
+                      newsSite:
+                        - 'The news site field is required.'
+                      summary:
+                        - 'The summary field is required.'
+                      featured:
+                        - 'The featured field is required.'
+      tags:
+        - Artigos
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                title:
+                  type: string
+                  description: 'The title of the article.'
+                  example: et
+                url:
+                  type: string
+                  description: 'The url of the article.'
+                  example: sapiente
+                imageUrl:
+                  type: string
+                  description: 'The image url of the article.'
+                  example: ducimus
+                newsSite:
+                  type: string
+                  description: 'The news site of the article.'
+                  example: vero
+                summary:
+                  type: string
+                  description: 'The summary of the article.'
+                  example: eius
+                featured:
+                  type: boolean
+                  description: 'The featured of the article.'
+                  example: false
+                launches:
+                  type: array
+                  description: 'The launches of the article.'
+                  example:
+                    - velit
+                  items:
+                    type: string
+                events:
+                  type: array
+                  description: 'The events of the article.'
+                  example:
+                    - sed
+                  items:
+                    type: string
+              required:
+                - title
+                - url
+                - imageUrl
+                - newsSite
+                - summary
+                - featured
+                - launches
+                - events
+      security: []
+    get:
+      summary: 'Obter um único artigo'
+      description: ''
+      parameters:
+        -
+          in: header
+          name: Content-Type
+          description: ''
+          example: application/json
+          schema:
+            type: string
+        -
+          in: header
+          name: Accept
+          description: ''
+          example: application/json
+          schema:
+            type: string
+      responses:
+        200:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  data:
+                    title: omnis
+                    url: occaecati
+                    imageUrl: est
+                    newsSite: et
+                    summary: omnis
+                    featured: true
+                    publishedAt: '2021-12-25T13:16:00.000000Z'
+                    updatedAt: '2021-12-25T19:01:28.000000Z'
+                    id: 17
+                properties:
+                  data:
+                    type: object
+                    example:
+                      title: omnis
+                      url: occaecati
+                      imageUrl: est
+                      newsSite: et
+                      summary: omnis
+                      featured: true
+                      publishedAt: '2021-12-25T13:16:00.000000Z'
+                      updatedAt: '2021-12-25T19:01:28.000000Z'
+                      id: 17
+        404:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  message: 'Resource not found!'
+                properties:
+                  message:
+                    type: string
+                    example: 'Resource not found!'
+      tags:
+        - Artigos
+      security: []
+    parameters:
+      -
+        in: path
+        name: id
+        description: 'The ID of the article.'
+        example: 5
+        required: true
+        schema:
+          type: integer
+  /:
+    get:
+      summary: ''
+      description: ''
+      parameters:
+        -
+          in: header
+          name: Content-Type
+          description: ''
+          example: application/json
+          schema:
+            type: string
+        -
+          in: header
+          name: Accept
+          description: ''
+          example: application/json
+          schema:
+            type: string
+      responses:
+        200:
+          description: ''
+          content:
+            text/plain:
+              schema:
+                type: string
+                example: 'Back-end Challenge 2021 🏅 - Space Flight News'
+      tags:
+        - Endpoints
+      security: []
+tags:
+  -
+    name: Artigos
+    description: ''
+  -
+    name: Endpoints
+    description: ''

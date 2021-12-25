@@ -1,0 +1,47 @@
+# For more information: https://laravel.com/docs/sail
+version: '3'
+services:
+    laravel.test:
+        build:
+            context: ./docker/8.1
+            dockerfile: Dockerfile
+            args:
+                WWWGROUP: '${WWWGROUP}'
+        image: sail-8.1/app
+        extra_hosts:
+            - 'host.docker.internal:host-gateway'
+        ports:
+            - '${APP_PORT:-80}:80'
+        environment:
+            WWWUSER: '${WWWUSER}'
+            LARAVEL_SAIL: 1
+        volumes:
+            - '.:/var/www/html'
+        networks:
+            - coodesh
+        depends_on:
+            - pgsql
+    pgsql:
+        image: 'postgres:13'
+        ports:
+            - "5432:5432"
+        environment:
+            PGPASSWORD: '${DB_PASSWORD}'
+            POSTGRES_DB: '${DB_DATABASE}'
+            POSTGRES_USER: '${DB_USERNAME}'
+            POSTGRES_PASSWORD: '${DB_PASSWORD}'
+        volumes:
+            - 'coodeshpgsql:/var/lib/postgresql/data'
+        networks:
+            - coodesh
+        healthcheck:
+            test: [ "CMD", "pg_isready", "-q", "-d", "${DB_DATABASE}", "-U", "${DB_USERNAME}" ]
+            retries: 3
+            timeout: 5s
+networks:
+    coodesh:
+        driver: bridge
+
+volumes:
+    coodeshpgsql:
+        driver: local
