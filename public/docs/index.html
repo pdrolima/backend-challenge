@@ -1,0 +1,1128 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>Space Flight News</title>
+
+    <link href="https://fonts.googleapis.com/css?family=PT+Sans&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="../docs/css/theme-default.style.css" media="screen">
+    <link rel="stylesheet" href="../docs/css/theme-default.print.css" media="print">
+
+    <script src="https://cdn.jsdelivr.net/npm/lodash@4.17.10/lodash.min.js"></script>
+
+    <link rel="stylesheet"
+          href="https://unpkg.com/@highlightjs/cdn-assets@10.7.2/styles/obsidian.min.css">
+    <script src="https://unpkg.com/@highlightjs/cdn-assets@10.7.2/highlight.min.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jets/0.14.1/jets.min.js"></script>
+
+    <style id="language-style">
+        /* starts out as display none and is replaced with js later  */
+                    body .content .bash-example code { display: none; }
+                    body .content .php-example code { display: none; }
+            </style>
+
+    <script>
+        var baseUrl = "http://laravel-backend-challenge.test";
+        var useCsrf = Boolean();
+        var csrfUrl = "/sanctum/csrf-cookie";
+    </script>
+    <script src="../docs/js/tryitout-3.20.0.js"></script>
+
+    <script src="../docs/js/theme-default-3.20.0.js"></script>
+
+</head>
+
+<body data-languages="[&quot;bash&quot;,&quot;php&quot;]">
+
+<a href="#" id="nav-button">
+    <span>
+        MENU
+        <img src="../docs/images/navbar.png" alt="navbar-image" />
+    </span>
+</a>
+<div class="tocify-wrapper">
+    
+            <div class="lang-selector">
+                                            <button type="button" class="lang-button" data-language-name="bash">bash</button>
+                                            <button type="button" class="lang-button" data-language-name="php">php</button>
+                    </div>
+    
+    <div class="search">
+        <input type="text" class="search" id="input-search" placeholder="Search">
+    </div>
+
+    <div id="toc">
+                                                                            <ul id="tocify-header-0" class="tocify-header">
+                    <li class="tocify-item level-1" data-unique="introduction">
+                        <a href="#introduction">Introduction</a>
+                    </li>
+                                            
+                                                                    </ul>
+                                                <ul id="tocify-header-1" class="tocify-header">
+                    <li class="tocify-item level-1" data-unique="authenticating-requests">
+                        <a href="#authenticating-requests">Authenticating requests</a>
+                    </li>
+                                            
+                                                </ul>
+                    
+                    <ul id="tocify-header-2" class="tocify-header">
+                <li class="tocify-item level-1" data-unique="artigos">
+                    <a href="#artigos">Artigos</a>
+                </li>
+                                    <ul id="tocify-subheader-artigos" class="tocify-subheader">
+                                                    <li class="tocify-item level-2" data-unique="artigos-GETarticles">
+                        <a href="#artigos-GETarticles">Lista todos os artigos</a>
+                    </li>
+                                    <li class="tocify-item level-2" data-unique="artigos-DELETEarticles--id-">
+                        <a href="#artigos-DELETEarticles--id-">Deleta um artigo</a>
+                    </li>
+                                    <li class="tocify-item level-2" data-unique="artigos-POSTarticles">
+                        <a href="#artigos-POSTarticles">Adiciona um novo artigo</a>
+                    </li>
+                                    <li class="tocify-item level-2" data-unique="artigos-PUTarticles--id-">
+                        <a href="#artigos-PUTarticles--id-">Atualiza um único artigo</a>
+                    </li>
+                                    <li class="tocify-item level-2" data-unique="artigos-GETarticles--id-">
+                        <a href="#artigos-GETarticles--id-">Obter um único artigo</a>
+                    </li>
+                                                    </ul>
+                            </ul>
+                    <ul id="tocify-header-3" class="tocify-header">
+                <li class="tocify-item level-1" data-unique="endpoints">
+                    <a href="#endpoints">Endpoints</a>
+                </li>
+                                    <ul id="tocify-subheader-endpoints" class="tocify-subheader">
+                                                    <li class="tocify-item level-2" data-unique="endpoints-GET-">
+                        <a href="#endpoints-GET-">GET /</a>
+                    </li>
+                                                    </ul>
+                            </ul>
+        
+                        
+            </div>
+
+            <ul class="toc-footer" id="toc-footer">
+                            <li><a href="../docs/collection.json">View Postman collection</a></li>
+                            <li><a href="../docs/openapi.yaml">View OpenAPI spec</a></li>
+                            <li><a href="http://github.com/knuckleswtf/scribe">Documentation powered by Scribe ✍</a></li>
+                    </ul>
+        <ul class="toc-footer" id="last-updated">
+        <li>Last updated: December 25 2021</li>
+    </ul>
+</div>
+
+<div class="page-wrapper">
+    <div class="dark-box"></div>
+    <div class="content">
+        <h1 id="introduction">Introduction</h1>
+<p>API utilizando dados do Space Flight News para obter artigos relacionados a voos espaciais.</p>
+<p>Esta documentação visa fornecer todas as informações de que você precisa para trabalhar com nossa API.</p>
+<blockquote>
+<p>Base URL</p>
+</blockquote>
+<pre><code class="language-yaml">http://laravel-backend-challenge.test</code></pre>
+
+        <h1 id="authenticating-requests">Authenticating requests</h1>
+<p>This API is not authenticated.</p>
+
+        <h1 id="artigos">Artigos</h1>
+
+    
+
+            <h2 id="artigos-GETarticles">Lista todos os artigos</h2>
+
+<p>
+</p>
+
+
+
+<span id="example-requests-GETarticles">
+<blockquote>Example request:</blockquote>
+
+
+<div class="bash-example">
+    <pre><code class="language-bash">curl --request GET \
+    --get "http://laravel-backend-challenge.test/articles" \
+    --header "Content-Type: application/json" \
+    --header "Accept: application/json"</code></pre></div>
+
+
+<div class="php-example">
+    <pre><code class="language-php">$client = new \GuzzleHttp\Client();
+$response = $client-&gt;get(
+    'http://laravel-backend-challenge.test/articles',
+    [
+        'headers' =&gt; [
+            'Content-Type' =&gt; 'application/json',
+            'Accept' =&gt; 'application/json',
+        ],
+    ]
+);
+$body = $response-&gt;getBody();
+print_r(json_decode((string) $body));</code></pre></div>
+
+</span>
+
+<span id="example-responses-GETarticles">
+            <blockquote>
+            <p>Example response (200):</p>
+        </blockquote>
+                <pre>
+
+<code class="language-json">{
+ &quot;data&quot;: [
+ {
+   &quot;id&quot;: 1,
+    &quot;title&quot;: &quot;NASA Selects Four University Teams for Aviation Projects&quot;,
+    &quot;url&quot;: &quot;http://www.nasa.gov/press-release/nasa-selects-four-university-teams-for-aviation-projects&quot;,
+    &quot;imageUrl&quot;: &quot;https://www.nasa.gov/sites/default/files/thumbnails/image/university-concept.jpg?itok=HPhDA6V-&quot;,
+    &quot;newsSite&quot;: &quot;NASA&quot;,
+&quot;     summary&quot;: &quot;NASA&rsquo;s research focus on sustainable aviation will get some big help from teams of university
+faculty and students recently selected to participate in the agency&rsquo;s University Leadership Initiative (ULI).&quot;,
+     &quot;featured&quot;: false,
+     &quot;launches&quot;: [],
+     &quot;events&quot;: [],
+     &quot;publishedAt&quot;: &quot;2021-12-23T19:06:00.000000Z&quot;,
+     &quot;updatedAt&quot;: &quot;2021-12-23T19:06:55.000000Z&quot;
+  }
+],
+&quot;links&quot;: {
+  &quot;first&quot;: &quot;http://laravel-backend-challenge.test/articles?page=1&quot;,
+  &quot;last&quot;: &quot;http://laravel-backend-challenge.test/articles?page=1&quot;,
+  &quot;prev&quot;: null,
+  &quot;next&quot;: null
+ },
+ &quot;meta&quot;: {
+  &quot;current_page&quot;: 1,
+  &quot;from&quot;: 1,
+  &quot;last_page&quot;: 1,
+  &quot;links&quot;: [
+     {
+        &quot;url&quot;: null,
+       &quot;label&quot;: &quot;&amp;laquo; Previous&quot;,
+       &quot;active&quot;: false
+     },
+     {
+     &quot;url&quot;: &quot;http://laravel-backend-challenge.test/articles?page=1&quot;,
+     &quot;label&quot;: &quot;1&quot;,
+     &quot;active&quot;: true
+    },
+    {
+     &quot;url&quot;: null,
+     &quot;label&quot;: &quot;Next &amp;raquo;&quot;,
+     &quot;active&quot;: false
+     }
+  ],
+    &quot;path&quot;: &quot;http://laravel-backend-challenge.test/articles&quot;,
+    &quot;per_page&quot;: 15,
+    &quot;to&quot;: 1,
+    &quot;total&quot;: 1
+   }
+}</code>
+ </pre>
+    </span>
+<span id="execution-results-GETarticles" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-GETarticles"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-GETarticles"></code></pre>
+</span>
+<span id="execution-error-GETarticles" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-GETarticles"></code></pre>
+</span>
+<form id="form-GETarticles" data-method="GET"
+      data-path="articles"
+      data-authed="0"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      data-headers='{"Content-Type":"application\/json","Accept":"application\/json"}'
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('GETarticles', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+                    <button type="button"
+                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-tryout-GETarticles"
+                    onclick="tryItOut('GETarticles');">Try it out ⚡
+            </button>
+            <button type="button"
+                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-canceltryout-GETarticles"
+                    onclick="cancelTryOut('GETarticles');" hidden>Cancel 🛑
+            </button>&nbsp;&nbsp;
+            <button type="submit"
+                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-executetryout-GETarticles" hidden>Send Request 💥
+            </button>
+            </h3>
+            <p>
+            <small class="badge badge-green">GET</small>
+            <b><code>articles</code></b>
+        </p>
+                    </form>
+
+            <h2 id="artigos-DELETEarticles--id-">Deleta um artigo</h2>
+
+<p>
+</p>
+
+
+
+<span id="example-requests-DELETEarticles--id-">
+<blockquote>Example request:</blockquote>
+
+
+<div class="bash-example">
+    <pre><code class="language-bash">curl --request DELETE \
+    "http://laravel-backend-challenge.test/articles/5" \
+    --header "Content-Type: application/json" \
+    --header "Accept: application/json"</code></pre></div>
+
+
+<div class="php-example">
+    <pre><code class="language-php">$client = new \GuzzleHttp\Client();
+$response = $client-&gt;delete(
+    'http://laravel-backend-challenge.test/articles/5',
+    [
+        'headers' =&gt; [
+            'Content-Type' =&gt; 'application/json',
+            'Accept' =&gt; 'application/json',
+        ],
+    ]
+);
+$body = $response-&gt;getBody();
+print_r(json_decode((string) $body));</code></pre></div>
+
+</span>
+
+<span id="example-responses-DELETEarticles--id-">
+            <blockquote>
+            <p>Example response (200):</p>
+        </blockquote>
+                <pre>
+
+<code class="language-json">{
+    &quot;message&quot;: &quot;Artigo deletado!&quot;
+}</code>
+ </pre>
+            <blockquote>
+            <p>Example response (404):</p>
+        </blockquote>
+                <pre>
+
+<code class="language-json">{
+    &quot;message&quot;: &quot;Resource not found!&quot;
+}</code>
+ </pre>
+    </span>
+<span id="execution-results-DELETEarticles--id-" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-DELETEarticles--id-"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-DELETEarticles--id-"></code></pre>
+</span>
+<span id="execution-error-DELETEarticles--id-" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-DELETEarticles--id-"></code></pre>
+</span>
+<form id="form-DELETEarticles--id-" data-method="DELETE"
+      data-path="articles/{id}"
+      data-authed="0"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      data-headers='{"Content-Type":"application\/json","Accept":"application\/json"}'
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('DELETEarticles--id-', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+                    <button type="button"
+                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-tryout-DELETEarticles--id-"
+                    onclick="tryItOut('DELETEarticles--id-');">Try it out ⚡
+            </button>
+            <button type="button"
+                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-canceltryout-DELETEarticles--id-"
+                    onclick="cancelTryOut('DELETEarticles--id-');" hidden>Cancel 🛑
+            </button>&nbsp;&nbsp;
+            <button type="submit"
+                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-executetryout-DELETEarticles--id-" hidden>Send Request 💥
+            </button>
+            </h3>
+            <p>
+            <small class="badge badge-red">DELETE</small>
+            <b><code>articles/{id}</code></b>
+        </p>
+                    <h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
+                    <p>
+                <b><code>id</code></b>&nbsp;&nbsp;<small>integer</small>  &nbsp;
+                <input type="number"
+               name="id"
+               data-endpoint="DELETEarticles--id-"
+               value="5"
+               data-component="url" hidden>
+    <br>
+<p>The ID of the article.</p>
+            </p>
+                    </form>
+
+            <h2 id="artigos-POSTarticles">Adiciona um novo artigo</h2>
+
+<p>
+</p>
+
+
+
+<span id="example-requests-POSTarticles">
+<blockquote>Example request:</blockquote>
+
+
+<div class="bash-example">
+    <pre><code class="language-bash">curl --request POST \
+    "http://laravel-backend-challenge.test/articles" \
+    --header "Content-Type: application/json" \
+    --header "Accept: application/json" \
+    --data "{
+    \"title\": \"quo\",
+    \"url\": \"consequatur\",
+    \"imageUrl\": \"voluptatem\",
+    \"newsSite\": \"unde\",
+    \"summary\": \"nisi\",
+    \"featured\": true,
+    \"launches\": [
+        \"deleniti\"
+    ],
+    \"events\": [
+        \"officiis\"
+    ]
+}"
+</code></pre></div>
+
+
+<div class="php-example">
+    <pre><code class="language-php">$client = new \GuzzleHttp\Client();
+$response = $client-&gt;post(
+    'http://laravel-backend-challenge.test/articles',
+    [
+        'headers' =&gt; [
+            'Content-Type' =&gt; 'application/json',
+            'Accept' =&gt; 'application/json',
+        ],
+        'json' =&gt; [
+            'title' =&gt; 'quo',
+            'url' =&gt; 'consequatur',
+            'imageUrl' =&gt; 'voluptatem',
+            'newsSite' =&gt; 'unde',
+            'summary' =&gt; 'nisi',
+            'featured' =&gt; true,
+            'launches' =&gt; [
+                'deleniti',
+            ],
+            'events' =&gt; [
+                'officiis',
+            ],
+        ],
+    ]
+);
+$body = $response-&gt;getBody();
+print_r(json_decode((string) $body));</code></pre></div>
+
+</span>
+
+<span id="example-responses-POSTarticles">
+            <blockquote>
+            <p>Example response (201):</p>
+        </blockquote>
+                <pre>
+
+<code class="language-json">{
+{
+   &quot;data&quot;: {
+       &quot;title&quot;: &quot;omnis&quot;,
+        &quot;url&quot;: &quot;occaecati&quot;,
+        &quot;imageUrl&quot;: &quot;est&quot;,
+       &quot;newsSite&quot;: &quot;et&quot;,
+        &quot;summary&quot;: &quot;omnis&quot;,
+        &quot;featured&quot;: true,
+        &quot;publishedAt&quot;: &quot;2021-12-25T13:16:00.000000Z&quot;,
+       &quot;updatedAt&quot;: &quot;2021-12-25T19:01:28.000000Z&quot;,
+       &quot;id&quot;: 17
+   }
+ }</code>
+ </pre>
+            <blockquote>
+            <p>Example response (422):</p>
+        </blockquote>
+                <pre>
+
+<code class="language-json">{
+    &quot;message&quot;: &quot;The given data was invalid.&quot;,
+    &quot;errors&quot;: {
+        &quot;title&quot;: [
+            &quot;The title field is required.&quot;
+        ],
+        &quot;url&quot;: [
+            &quot;The url field is required.&quot;
+        ],
+        &quot;imageUrl&quot;: [
+            &quot;The image url field is required.&quot;
+        ],
+        &quot;newsSite&quot;: [
+            &quot;The news site field is required.&quot;
+        ],
+        &quot;summary&quot;: [
+            &quot;The summary field is required.&quot;
+        ],
+        &quot;featured&quot;: [
+            &quot;The featured field is required.&quot;
+        ]
+    }
+}</code>
+ </pre>
+    </span>
+<span id="execution-results-POSTarticles" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-POSTarticles"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-POSTarticles"></code></pre>
+</span>
+<span id="execution-error-POSTarticles" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-POSTarticles"></code></pre>
+</span>
+<form id="form-POSTarticles" data-method="POST"
+      data-path="articles"
+      data-authed="0"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      data-headers='{"Content-Type":"application\/json","Accept":"application\/json"}'
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('POSTarticles', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+                    <button type="button"
+                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-tryout-POSTarticles"
+                    onclick="tryItOut('POSTarticles');">Try it out ⚡
+            </button>
+            <button type="button"
+                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-canceltryout-POSTarticles"
+                    onclick="cancelTryOut('POSTarticles');" hidden>Cancel 🛑
+            </button>&nbsp;&nbsp;
+            <button type="submit"
+                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-executetryout-POSTarticles" hidden>Send Request 💥
+            </button>
+            </h3>
+            <p>
+            <small class="badge badge-black">POST</small>
+            <b><code>articles</code></b>
+        </p>
+                            <h4 class="fancy-heading-panel"><b>Body Parameters</b></h4>
+        <p>
+            <b><code>title</code></b>&nbsp;&nbsp;<small>string</small>  &nbsp;
+                <input type="text"
+               name="title"
+               data-endpoint="POSTarticles"
+               value="quo"
+               data-component="body" hidden>
+    <br>
+<p>The title of the article.</p>
+        </p>
+                <p>
+            <b><code>url</code></b>&nbsp;&nbsp;<small>string</small>  &nbsp;
+                <input type="text"
+               name="url"
+               data-endpoint="POSTarticles"
+               value="consequatur"
+               data-component="body" hidden>
+    <br>
+<p>The url of the article.</p>
+        </p>
+                <p>
+            <b><code>imageUrl</code></b>&nbsp;&nbsp;<small>string</small>  &nbsp;
+                <input type="text"
+               name="imageUrl"
+               data-endpoint="POSTarticles"
+               value="voluptatem"
+               data-component="body" hidden>
+    <br>
+<p>The image url of the article.</p>
+        </p>
+                <p>
+            <b><code>newsSite</code></b>&nbsp;&nbsp;<small>string</small>  &nbsp;
+                <input type="text"
+               name="newsSite"
+               data-endpoint="POSTarticles"
+               value="unde"
+               data-component="body" hidden>
+    <br>
+<p>The news site of the article.</p>
+        </p>
+                <p>
+            <b><code>summary</code></b>&nbsp;&nbsp;<small>string</small>  &nbsp;
+                <input type="text"
+               name="summary"
+               data-endpoint="POSTarticles"
+               value="nisi"
+               data-component="body" hidden>
+    <br>
+<p>The summary of the article.</p>
+        </p>
+                <p>
+            <b><code>featured</code></b>&nbsp;&nbsp;<small>boolean</small>  &nbsp;
+                <label data-endpoint="POSTarticles" hidden>
+            <input type="radio" name="featured"
+                   value="true"
+                   data-endpoint="POSTarticles"
+                   data-component="body"
+            >
+            <code>true</code>
+        </label>
+        <label data-endpoint="POSTarticles" hidden>
+            <input type="radio" name="featured"
+                   value="false"
+                   data-endpoint="POSTarticles"
+                   data-component="body"
+            >
+            <code>false</code>
+        </label>
+    <br>
+<p>The featured of the article.</p>
+        </p>
+                <p>
+            <b><code>launches</code></b>&nbsp;&nbsp;<small>string[]</small>  &nbsp;
+                <input type="text"
+               name="launches[0]"
+               data-endpoint="POSTarticles"
+               data-component="body" hidden>
+        <input type="text"
+               name="launches[1]"
+               data-endpoint="POSTarticles"
+               data-component="body" hidden>
+    <br>
+<p>The launches of the article.</p>
+        </p>
+                <p>
+            <b><code>events</code></b>&nbsp;&nbsp;<small>string[]</small>  &nbsp;
+                <input type="text"
+               name="events[0]"
+               data-endpoint="POSTarticles"
+               data-component="body" hidden>
+        <input type="text"
+               name="events[1]"
+               data-endpoint="POSTarticles"
+               data-component="body" hidden>
+    <br>
+<p>The events of the article.</p>
+        </p>
+        </form>
+
+            <h2 id="artigos-PUTarticles--id-">Atualiza um único artigo</h2>
+
+<p>
+</p>
+
+
+
+<span id="example-requests-PUTarticles--id-">
+<blockquote>Example request:</blockquote>
+
+
+<div class="bash-example">
+    <pre><code class="language-bash">curl --request PUT \
+    "http://laravel-backend-challenge.test/articles/9" \
+    --header "Content-Type: application/json" \
+    --header "Accept: application/json" \
+    --data "{
+    \"title\": \"et\",
+    \"url\": \"sapiente\",
+    \"imageUrl\": \"ducimus\",
+    \"newsSite\": \"vero\",
+    \"summary\": \"eius\",
+    \"featured\": false,
+    \"launches\": [
+        \"velit\"
+    ],
+    \"events\": [
+        \"sed\"
+    ]
+}"
+</code></pre></div>
+
+
+<div class="php-example">
+    <pre><code class="language-php">$client = new \GuzzleHttp\Client();
+$response = $client-&gt;put(
+    'http://laravel-backend-challenge.test/articles/9',
+    [
+        'headers' =&gt; [
+            'Content-Type' =&gt; 'application/json',
+            'Accept' =&gt; 'application/json',
+        ],
+        'json' =&gt; [
+            'title' =&gt; 'et',
+            'url' =&gt; 'sapiente',
+            'imageUrl' =&gt; 'ducimus',
+            'newsSite' =&gt; 'vero',
+            'summary' =&gt; 'eius',
+            'featured' =&gt; false,
+            'launches' =&gt; [
+                'velit',
+            ],
+            'events' =&gt; [
+                'sed',
+            ],
+        ],
+    ]
+);
+$body = $response-&gt;getBody();
+print_r(json_decode((string) $body));</code></pre></div>
+
+</span>
+
+<span id="example-responses-PUTarticles--id-">
+            <blockquote>
+            <p>Example response (200):</p>
+        </blockquote>
+                <pre>
+
+<code class="language-json">{
+   &quot;data&quot;: {
+      &quot;id&quot;: 10
+       &quot;title&quot;: &quot;omnis&quot;,
+        &quot;url&quot;: &quot;occaecati&quot;,
+        &quot;imageUrl&quot;: &quot;est&quot;,
+        &quot;newsSite&quot;: &quot;et&quot;,
+        &quot;summary&quot;: &quot;omnis&quot;,
+        &quot;featured&quot;: true,
+        &quot;publishedAt&quot;: &quot;2021-12-25T13:16:00.000000Z&quot;,
+        &quot;updatedAt&quot;: &quot;2021-12-25T19:01:28.000000Z&quot;,
+   }
+ }</code>
+ </pre>
+            <blockquote>
+            <p>Example response (404):</p>
+        </blockquote>
+                <pre>
+
+<code class="language-json">{
+    &quot;message&quot;: &quot;Resource not found!&quot;
+}</code>
+ </pre>
+            <blockquote>
+            <p>Example response (422):</p>
+        </blockquote>
+                <pre>
+
+<code class="language-json">{
+    &quot;message&quot;: &quot;The given data was invalid.&quot;,
+    &quot;errors&quot;: {
+        &quot;title&quot;: [
+            &quot;The title field is required.&quot;
+        ],
+        &quot;url&quot;: [
+            &quot;The url field is required.&quot;
+        ],
+        &quot;imageUrl&quot;: [
+            &quot;The image url field is required.&quot;
+        ],
+        &quot;newsSite&quot;: [
+            &quot;The news site field is required.&quot;
+        ],
+        &quot;summary&quot;: [
+            &quot;The summary field is required.&quot;
+        ],
+        &quot;featured&quot;: [
+            &quot;The featured field is required.&quot;
+        ]
+    }
+}</code>
+ </pre>
+    </span>
+<span id="execution-results-PUTarticles--id-" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-PUTarticles--id-"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-PUTarticles--id-"></code></pre>
+</span>
+<span id="execution-error-PUTarticles--id-" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-PUTarticles--id-"></code></pre>
+</span>
+<form id="form-PUTarticles--id-" data-method="PUT"
+      data-path="articles/{id}"
+      data-authed="0"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      data-headers='{"Content-Type":"application\/json","Accept":"application\/json"}'
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('PUTarticles--id-', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+                    <button type="button"
+                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-tryout-PUTarticles--id-"
+                    onclick="tryItOut('PUTarticles--id-');">Try it out ⚡
+            </button>
+            <button type="button"
+                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-canceltryout-PUTarticles--id-"
+                    onclick="cancelTryOut('PUTarticles--id-');" hidden>Cancel 🛑
+            </button>&nbsp;&nbsp;
+            <button type="submit"
+                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-executetryout-PUTarticles--id-" hidden>Send Request 💥
+            </button>
+            </h3>
+            <p>
+            <small class="badge badge-darkblue">PUT</small>
+            <b><code>articles/{id}</code></b>
+        </p>
+            <p>
+            <small class="badge badge-purple">PATCH</small>
+            <b><code>articles/{id}</code></b>
+        </p>
+                    <h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
+                    <p>
+                <b><code>id</code></b>&nbsp;&nbsp;<small>integer</small>  &nbsp;
+                <input type="number"
+               name="id"
+               data-endpoint="PUTarticles--id-"
+               value="9"
+               data-component="url" hidden>
+    <br>
+<p>The ID of the article.</p>
+            </p>
+                            <h4 class="fancy-heading-panel"><b>Body Parameters</b></h4>
+        <p>
+            <b><code>title</code></b>&nbsp;&nbsp;<small>string</small>  &nbsp;
+                <input type="text"
+               name="title"
+               data-endpoint="PUTarticles--id-"
+               value="et"
+               data-component="body" hidden>
+    <br>
+<p>The title of the article.</p>
+        </p>
+                <p>
+            <b><code>url</code></b>&nbsp;&nbsp;<small>string</small>  &nbsp;
+                <input type="text"
+               name="url"
+               data-endpoint="PUTarticles--id-"
+               value="sapiente"
+               data-component="body" hidden>
+    <br>
+<p>The url of the article.</p>
+        </p>
+                <p>
+            <b><code>imageUrl</code></b>&nbsp;&nbsp;<small>string</small>  &nbsp;
+                <input type="text"
+               name="imageUrl"
+               data-endpoint="PUTarticles--id-"
+               value="ducimus"
+               data-component="body" hidden>
+    <br>
+<p>The image url of the article.</p>
+        </p>
+                <p>
+            <b><code>newsSite</code></b>&nbsp;&nbsp;<small>string</small>  &nbsp;
+                <input type="text"
+               name="newsSite"
+               data-endpoint="PUTarticles--id-"
+               value="vero"
+               data-component="body" hidden>
+    <br>
+<p>The news site of the article.</p>
+        </p>
+                <p>
+            <b><code>summary</code></b>&nbsp;&nbsp;<small>string</small>  &nbsp;
+                <input type="text"
+               name="summary"
+               data-endpoint="PUTarticles--id-"
+               value="eius"
+               data-component="body" hidden>
+    <br>
+<p>The summary of the article.</p>
+        </p>
+                <p>
+            <b><code>featured</code></b>&nbsp;&nbsp;<small>boolean</small>  &nbsp;
+                <label data-endpoint="PUTarticles--id-" hidden>
+            <input type="radio" name="featured"
+                   value="true"
+                   data-endpoint="PUTarticles--id-"
+                   data-component="body"
+            >
+            <code>true</code>
+        </label>
+        <label data-endpoint="PUTarticles--id-" hidden>
+            <input type="radio" name="featured"
+                   value="false"
+                   data-endpoint="PUTarticles--id-"
+                   data-component="body"
+            >
+            <code>false</code>
+        </label>
+    <br>
+<p>The featured of the article.</p>
+        </p>
+                <p>
+            <b><code>launches</code></b>&nbsp;&nbsp;<small>string[]</small>  &nbsp;
+                <input type="text"
+               name="launches[0]"
+               data-endpoint="PUTarticles--id-"
+               data-component="body" hidden>
+        <input type="text"
+               name="launches[1]"
+               data-endpoint="PUTarticles--id-"
+               data-component="body" hidden>
+    <br>
+<p>The launches of the article.</p>
+        </p>
+                <p>
+            <b><code>events</code></b>&nbsp;&nbsp;<small>string[]</small>  &nbsp;
+                <input type="text"
+               name="events[0]"
+               data-endpoint="PUTarticles--id-"
+               data-component="body" hidden>
+        <input type="text"
+               name="events[1]"
+               data-endpoint="PUTarticles--id-"
+               data-component="body" hidden>
+    <br>
+<p>The events of the article.</p>
+        </p>
+        </form>
+
+            <h2 id="artigos-GETarticles--id-">Obter um único artigo</h2>
+
+<p>
+</p>
+
+
+
+<span id="example-requests-GETarticles--id-">
+<blockquote>Example request:</blockquote>
+
+
+<div class="bash-example">
+    <pre><code class="language-bash">curl --request GET \
+    --get "http://laravel-backend-challenge.test/articles/15" \
+    --header "Content-Type: application/json" \
+    --header "Accept: application/json"</code></pre></div>
+
+
+<div class="php-example">
+    <pre><code class="language-php">$client = new \GuzzleHttp\Client();
+$response = $client-&gt;get(
+    'http://laravel-backend-challenge.test/articles/15',
+    [
+        'headers' =&gt; [
+            'Content-Type' =&gt; 'application/json',
+            'Accept' =&gt; 'application/json',
+        ],
+    ]
+);
+$body = $response-&gt;getBody();
+print_r(json_decode((string) $body));</code></pre></div>
+
+</span>
+
+<span id="example-responses-GETarticles--id-">
+            <blockquote>
+            <p>Example response (200):</p>
+        </blockquote>
+                <pre>
+
+<code class="language-json">{
+    &quot;data&quot;: {
+        &quot;title&quot;: &quot;omnis&quot;,
+        &quot;url&quot;: &quot;occaecati&quot;,
+        &quot;imageUrl&quot;: &quot;est&quot;,
+        &quot;newsSite&quot;: &quot;et&quot;,
+        &quot;summary&quot;: &quot;omnis&quot;,
+        &quot;featured&quot;: true,
+        &quot;publishedAt&quot;: &quot;2021-12-25T13:16:00.000000Z&quot;,
+        &quot;updatedAt&quot;: &quot;2021-12-25T19:01:28.000000Z&quot;,
+        &quot;id&quot;: 17
+    }
+}</code>
+ </pre>
+            <blockquote>
+            <p>Example response (404):</p>
+        </blockquote>
+                <pre>
+
+<code class="language-json">{
+    &quot;message&quot;: &quot;Resource not found!&quot;
+}</code>
+ </pre>
+    </span>
+<span id="execution-results-GETarticles--id-" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-GETarticles--id-"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-GETarticles--id-"></code></pre>
+</span>
+<span id="execution-error-GETarticles--id-" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-GETarticles--id-"></code></pre>
+</span>
+<form id="form-GETarticles--id-" data-method="GET"
+      data-path="articles/{id}"
+      data-authed="0"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      data-headers='{"Content-Type":"application\/json","Accept":"application\/json"}'
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('GETarticles--id-', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+                    <button type="button"
+                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-tryout-GETarticles--id-"
+                    onclick="tryItOut('GETarticles--id-');">Try it out ⚡
+            </button>
+            <button type="button"
+                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-canceltryout-GETarticles--id-"
+                    onclick="cancelTryOut('GETarticles--id-');" hidden>Cancel 🛑
+            </button>&nbsp;&nbsp;
+            <button type="submit"
+                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-executetryout-GETarticles--id-" hidden>Send Request 💥
+            </button>
+            </h3>
+            <p>
+            <small class="badge badge-green">GET</small>
+            <b><code>articles/{id}</code></b>
+        </p>
+                    <h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
+                    <p>
+                <b><code>id</code></b>&nbsp;&nbsp;<small>integer</small>  &nbsp;
+                <input type="number"
+               name="id"
+               data-endpoint="GETarticles--id-"
+               value="15"
+               data-component="url" hidden>
+    <br>
+<p>The ID of the article.</p>
+            </p>
+                    </form>
+
+        <h1 id="endpoints">Endpoints</h1>
+
+    
+
+            <h2 id="endpoints-GET-">GET /</h2>
+
+<p>
+</p>
+
+
+
+<span id="example-requests-GET-">
+<blockquote>Example request:</blockquote>
+
+
+<div class="bash-example">
+    <pre><code class="language-bash">curl --request GET \
+    --get "http://laravel-backend-challenge.test/" \
+    --header "Content-Type: application/json" \
+    --header "Accept: application/json"</code></pre></div>
+
+
+<div class="php-example">
+    <pre><code class="language-php">$client = new \GuzzleHttp\Client();
+$response = $client-&gt;get(
+    'http://laravel-backend-challenge.test/',
+    [
+        'headers' =&gt; [
+            'Content-Type' =&gt; 'application/json',
+            'Accept' =&gt; 'application/json',
+        ],
+    ]
+);
+$body = $response-&gt;getBody();
+print_r(json_decode((string) $body));</code></pre></div>
+
+</span>
+
+<span id="example-responses-GET-">
+            <blockquote>
+            <p>Example response (200):</p>
+        </blockquote>
+                <details class="annotation">
+            <summary>
+                <small onclick="textContent = parentElement.parentElement.open ? 'Show headers' : 'Hide headers'">Show headers</small>
+            </summary>
+            <pre><code class="language-http">content-type: text/html; charset=UTF-8
+cache-control: no-cache, private
+set-cookie: XSRF-TOKEN=eyJpdiI6InNIQ1dQbUNmc1lRdU51b2xUcEJ6Q2c9PSIsInZhbHVlIjoidVYzK0g0VElYUzdOMStUNVhPWWNSZ2pLNWp4dk16YVB6cWtBNm1UZGZFZVhQTTZsaVlFTVFody83WGYrVnA4NE1MQks0MU41SktJVFRRbUd3VDlsZ2F2ZmNBdkoxVEE1NVp2TXcraTB4UXRzVHVqVHpYWThPTGtMSXZ1bHlPRlciLCJtYWMiOiIyNzE1NTUwYTM0ODY3NzY4ODEzNjMzM2NhYTg3YjViNWZiYjcxMDlkMTk2ZjljOTJiZjg0ZDgwYWI0YWY4NzVlIiwidGFnIjoiIn0%3D; expires=Sat, 25-Dec-2021 23:11:00 GMT; Max-Age=7200; path=/; samesite=lax; laravel_session=eyJpdiI6IlZqT05NR3p4SVIzKzZoWVdHMFowcUE9PSIsInZhbHVlIjoiZDVGUkNndjluNFV4dHoyRjcvV1BpaUwrZS9FR25rd3dlMk12MEJZKzYrMzNZNCtXYWZvWUpacmdqQjVUSHBjZ2FhY2RaVXVnMldVazJjSUNMZUd2ZXIwQm4vZVZBZ2JHeVI2bmw2d1dYQlFVY3J6clUxL3NMQnNjdVRqK2JObTgiLCJtYWMiOiI2OTM5YWFkOTU3OTllMDY4YzcwMmMzZmZiOWI5MDgwMGZlYTllNGMyMGQyODgxNDQwNmZiMmU1OWJmZTE1ZGE2IiwidGFnIjoiIn0%3D; expires=Sat, 25-Dec-2021 23:11:00 GMT; Max-Age=7200; path=/; httponly; samesite=lax
+ </code></pre>
+        </details>         <pre>
+
+<code class="language-json">Back-end Challenge 2021 🏅 - Space Flight News</code>
+ </pre>
+    </span>
+<span id="execution-results-GET-" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-GET-"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-GET-"></code></pre>
+</span>
+<span id="execution-error-GET-" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-GET-"></code></pre>
+</span>
+<form id="form-GET-" data-method="GET"
+      data-path="/"
+      data-authed="0"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      data-headers='{"Content-Type":"application\/json","Accept":"application\/json"}'
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('GET-', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+                    <button type="button"
+                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-tryout-GET-"
+                    onclick="tryItOut('GET-');">Try it out ⚡
+            </button>
+            <button type="button"
+                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-canceltryout-GET-"
+                    onclick="cancelTryOut('GET-');" hidden>Cancel 🛑
+            </button>&nbsp;&nbsp;
+            <button type="submit"
+                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-executetryout-GET-" hidden>Send Request 💥
+            </button>
+            </h3>
+            <p>
+            <small class="badge badge-green">GET</small>
+            <b><code>/</code></b>
+        </p>
+                    </form>
+
+    
+
+        
+    </div>
+    <div class="dark-box">
+                    <div class="lang-selector">
+                                                        <button type="button" class="lang-button" data-language-name="bash">bash</button>
+                                                        <button type="button" class="lang-button" data-language-name="php">php</button>
+                            </div>
+            </div>
+</div>
+</body>
+</html>

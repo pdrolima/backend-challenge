@@ -1,12 +1,12 @@
 # Space Flight News
 
 
-REST API utilizando dados do [Space Flight News](https://api.spaceflightnewsapi.net/v3/documentation) para obter informações relacionadas a vôos espaciais.
+REST API utilizando dados do [Space Flight News](https://api.spaceflightnewsapi.net/v3/documentation) para obter informações relacionadas a voos espaciais.
 
-Tecnologias/Frameworks utilizados:
+Frameworks e tecnologias utilizadas:
+- PHP 8
 - [Laravel 8](https://laravel.com/)
 - [Pest PHP](https://pestphp.com/)
-- Docker
 
 Instruções:
 
