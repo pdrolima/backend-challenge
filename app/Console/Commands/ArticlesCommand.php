@@ -27,7 +27,10 @@ class ArticlesCommand extends Command
 
         foreach ($articles as $article) {
             try {
-                Article::updateOrCreate($article);
+                Article::updateOrCreate(
+                    ['id' => $article['id']],
+                    $article
+                );
             } catch (QueryException | \PDOException | \ErrorException $e) {
                 $this->error($e->getMessage());
                 exit(1);
