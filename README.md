@@ -14,13 +14,15 @@ REST API utilizando dados do [Space Flight News](https://api.spaceflightnewsapi.
 Clone o projeto:
 
 ```bash
-$ git clone git@github.com:webmasterdro/laravel-backend-challenge.git
+$ git clone git@github.com:webmasterdro/backend-challenge.git laravel-backend-challenge
 ```
 
 Instale as dependências do projeto:
 
 ```bash
 $ composer install
+$ cp .env.example .env
+$ php artisan key:generate
 ```
 Para subir os containers rode:
 
@@ -36,7 +38,8 @@ $ ./vendor/bin/sail artisan test
 ```
 Acessando a documentação da API:
 
-[http://laravel-backend-challenge.test/docs](http://laravel-backend-challenge.test/docs)
+[http://laravel-backend-challenge.test/docs](http://laravel-backend-challenge.test/docs) ou 
+[http://localhost/docs](http:/localhost/docs)
 
 ---
 
